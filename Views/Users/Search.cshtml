@@ -1,0 +1,23 @@
+﻿@model EAD_2.Models.User
+@using EAD_2.Models;
+
+@{
+    ViewBag.Title = "Search";
+}
+
+@{
+    User user = (User)Session["user"];
+}
+
+<h2>Search Results </h2>
+
+@foreach (User i in ViewBag.List)
+{
+    <br/><br />    <br /><br />    <br /><br />    <br /><br />
+    <h3> Search Results </h3>
+    <form action="/Users/Pro">
+        <p> <a> @user.FirstName @user.LastName </a> </p>
+    </form>
+    <br/>
+
+}

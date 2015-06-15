@@ -1,0 +1,349 @@
+﻿@using EAD_2.Models
+@model EAD_2.Models.Post
+
+@{
+    ViewBag.Title = "User1";
+}
+
+@{
+    User user = (User)Session["user"];
+}
+
+
+@using EAD_2.Models
+
+
+<head>
+    @*<link href="~/Content/SideBar/css/bootstrap.min.css" rel="stylesheet" />*@
+    @*<link href="~/Content/SideBar/css/styles.css" rel="stylesheet" />*@
+    <script src="~/Content/SideBar/js/bootstrap.min.js"></script>
+    <script src="~/Content/SideBar/js/scripts.js"></script>
+
+
+
+        
+        <script src="~/Scripts/jquery.min.js"></script>
+            <script>
+                !window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>');
+            </script>
+    
+    @*<link href="~/Content/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" rel="stylesheet" />/>
+            <link rel="stylesheet" href="style.css" />
+
+            
+            <link href="~/Content/jquery.fancybox-1.3.4/style.css" rel="stylesheet" />
+            <script src="~/Content/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
+            <script src="~/Content/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+            <script src="~/Content/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>*@
+           
+
+    @*<script type="text/javascript" src="./fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
+    <script type="text/javascript" src="./fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <link rel="stylesheet" type="text/css" href="./fancybox/jquery.fancybox-1.3.4.css" media="screen" />*@
+
+
+                <script src="~/Content/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script>
+            <script src="~/Content/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/TimeLine/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="~/Content/TimeLine/css/simple-sidebar.css" rel="stylesheet" />
+
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+    <title>Distrilycs-DTL</title>
+    <!-- Bootstrap -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+    <!-- siimple style -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    @*<script src="~/Content/myslider/jssor/js/jquery-1.9.1.min.js"></script>*@
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/main.js"></script>
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+
+
+    <!---->
+    <script src="~/Content/TimeLine/buttons.js"></script>
+    <link href="~/Content/TimeLine/bootstrap_2.css" rel="stylesheet" />
+
+    <script src="~/Content/TimeLine/loader.js"></script>
+    <link href="~/Content/TimeLine/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/TimeLine/style_3.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    @*<script src="js/jquery.js"></script>
+    <script src="~/Content/TimeLine/jquery.js"></script>*@
+    <script src="js/bootstrap.js"></script>
+    <script src="~/Content/TimeLine/bootstrap.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.status').click(function() { $('.arrow').css("left", 0);});
+        $('.photos').click(function() { $('.arrow').css("left", 80);});
+        $('.videos').click(function() { $('.arrow').css("left", 160);});
+    });
+    </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "0d989ecb-3b82-4988-a090-d396a86e25a7", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+    <script>
+  var options={ "publisher": "0d989ecb-3b82-4988-a090-d396a86e25a7", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+    </script>
+
+
+    @*$('.left.demo.sidebar')
+    .sidebar('toggle')
+    ;*@
+
+    @*<script type="text/javascript">
+    $(document).ready(function () {
+        $(".fancybox").fancybox();
+    });
+    </script>*@
+</head>
+
+
+
+
+
+              
+
+                    @*<div id="sidebar-wrapper" class="col-md-2">
+                        <ul class="sidebar-nav">
+                            @*<li class="sidebar-brand">*@
+                            @*<li>
+                                <a href="#">
+                                    <br/>
+                                  <p style="font:bolder"> Search Your Friends . . .  </p>
+                                    @*<input name="FirstName" type="text" class="form-control input-lg" placeholder="Search Friends here . . " />*@
+
+                             @*   </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <form action="/Users/SearchValidate" method="post">
+                                        <input name="FirstName" type="text" class="form-control" placeholder="Enter Name" style="width:170px;" />
+                                    </form>
+
+                                </a>
+                            </li>
+                      
+                          \
+                                    @if (ViewBag.SearchList != null)
+                                    {
+                                        foreach (User i in ViewBag.SearchList)
+                                        {
+                                            <li>
+
+                                                <a href="/Users/ShowProfile?UserID=@i.UserID">
+                                                    <img src="~/FFiles/@i.ProfilePicture" width="30" height="30" />
+                                                    @i.FirstName @i.LastName
+                                                </a>
+
+                                            </li>
+
+                                }
+
+                                }
+
+
+
+
+</ul>
+                    </div>*@
+                    <!-- /#sidebar-wrapper -->
+<body>
+
+<div class="container">
+
+    <div class="row">
+       <div class="col-md-3" id="leftCol" style="margin-left:-100px">
+            <div class="well" @*id="checking"*@ >
+
+                <ul class="nav nav-stacked" id="sidebar">
+                    <li> Search your Friends Here ...  </li>
+                    <li>
+                        <div>
+
+                            <input id="FirstName" name="FirstName" type="text" class="form-control" placeholder="Enter Name" style="width:200px;" />
+                            <button id="b1"> search </button>
+                           
+                        </div>
+
+                    </li>
+                    
+                    <li>
+                        <div id="result">
+
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+            @Scripts.Render("~/bundles/jquery")
+            <script>
+                $(document).ready(function () {
+
+                    $('#checking').hide();
+
+                    $('#b1').click(function () {
+
+                        var Email = $('#FirstName').val();
+
+                        //alert('User Name ='+ userName);
+                        $('#checking').show();
+                        $('#result').load("/Users/SearchValidate?FirstName=" + Email);
+                        
+                        //$.getJSON("~/Users/SearchValidate?FiratName=" + Email, function (data) {
+                        //    $('#checking').hide();
+                        //    if (data) {
+                        //        $('#result').text("Email ID Already registered");
+                        //    }
+                        //    else {
+                        //        $('#result').text("OK");
+                        //    }
+                        //});
+                       
+
+
+                    });
+
+                });
+            </script>
+      
+
+
+
+           
+
+            <!---->
+            <!--Getting list-->
+          
+           @*<div id="show">*@
+           
+            
+     
+
+        @*</div>*@
+
+ 
+        <div class="col-md-10 col-md-offset-2" style="margin-top:-140px">
+
+            <h2 class="text-center"> Welcome @user.FirstName</h2>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-time invert" title="Now" id=""></i></a></div>
+                    <div class="timeline-panel">
+                        <form action="~/Users/AddPhoto" method="post" role="form" enctype="multipart/form-data" class="facebook-share-box">
+                            <div class="timeline-body">
+                                <div class="share-form">
+                                    <ul class="post-types">
+                                        <li class="post-type">
+                                            <a class="status" id="shareType" href="#"><i class="icon icon-file"></i> Status</a>
+                                        </li>
+                                        @*<li class="post-type">
+                                                <a class="photos" id="shareType" href="#"><i class="icon icon-camera"></i> Photos</a>
+                                            </li>
+                                            <li class="post-type">
+                                                <a class="videos" id="shareType" href="#"><i class="icon icon-film"></i> Video</a>
+                                            </li>*@
+                                    </ul>
+                                    <div class="share">
+                                        <div class="arrow"></div>
+                                        <div><textarea name="message" cols="40" rows="10" id="status_message" class="form-control message" style="height: 62px; overflow: hidden;" placeholder="What's on your mind ?"></textarea> </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="file" name="file" max="1" />
+                            <div class="timeline-footer clearfix">
+                                <div class="pull-right">
+                                    <input type="submit" name="submit" value="Post" id="btn-share" class="btn btn-primary">
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </li>
+                @*for (int i = 0; i < ViewBag.List.Length/2; i++)*@
+
+                @for (int i = 0; i < ViewBag.List.Count - 1; i = i + 2)
+                {
+                    <li class="timeline-inverted">
+                        <div class="timeline-badge primary"><a title="11 hours ago via Twitter"><i class="glyphicon glyphicon-time invert" id=""></i></a></div>
+                        <div class="timeline-panel" style="width:450px">
+                            <div class="timeline-header" style="width:450px">
+                                <div>
+                                    @*<p><a href="/Users/ProfileInfo/@user.UserID"> @user.FirstName @user.LastName</a> added a new Post </p>*@
+                                    <p><a href="/Users/ProfileInfo/@user.UserID"> @ViewBag.List[i].FirstName @ViewBag.List[i].LastName</a> added a new Post </p>
+                                    <p>@ViewBag.List[i].Status</p><br />
+                                    <p class="pull-right">@ViewBag.List[i].Post_Date</p>
+                                    <br>
+                                    <img class="img-responsive img-rounded" src="@Url.Content("~/FFiles/" + @ViewBag.List[i].File_Id)" style="width:600px; height:400px">
+                                    @*<img src="@Url.Content("~/FFiles/" + @ViewBag.List[i].File_Id)" />*@
+                                </div>
+                            </div>
+                            <div>
+                                <a href="/Users/Comments?id=@ViewBag.List[i].Id"> Comments </a>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li>
+                        <div class="timeline-badge primary"><a title="11 hours ago via Twitter"><i class="glyphicon glyphicon-time invert" id=""></i></a></div>
+                        <div class="timeline-panel" style="width:450px">
+                            <div class="timeline-header" style="width:450px">
+                                <div>
+                                    @*<p><a href="/Users/ProfileInfo/@user.UserID"> @user.FirstName @user.LastName</a> added a new Post </p>*@
+                                    <p><a href="/Users/ProfileInfo/@user.UserID"> @ViewBag.List[i + 1].FirstName @ViewBag.List[i + 1].LastName</a> added a new Post </p>
+                                    <p>@ViewBag.List[i + 1].Status</p><br />
+                                    <p class="pull-right">@ViewBag.List[i + 1].Post_Date</p>
+                                    <br> <img class="img-responsive img-rounded" src="@Url.Content("~/FFiles/" + @ViewBag.List[i+1].File_Id)" style="width:600px; height:400px">
+                                    @*<source src="@Url.Content("~/FFiles/" + @ViewBag.List[i].File_Id)" type="image/jpeg">*@
+
+                                    <div style="width:450px">
+                                        <a href="/Users/Comments?id= @ViewBag.List[i+1].Id"> Comments </a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+
+                }
+
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+            <script src="http://wsnippets.com/secure_download.js"></script>
+            <script>
+                (function (i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+                ga('create', 'UA-45065332-1', 'wsnippets.com');
+                ga('send', 'pageview');
+
+
+            </script>
+</body>

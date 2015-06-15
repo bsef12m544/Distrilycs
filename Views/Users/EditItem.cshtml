@@ -1,0 +1,124 @@
+﻿@model EAD_2.Models.User
+@using EAD_2.Models
+
+
+@{
+    ViewBag.Title = "EditItem";
+    Layout = null;
+    User user = (User)Session["user"];
+}
+
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditItem</title>
+    <h2> Edit User Detials </h2>
+</head>
+<body>
+    @*<div style="border:1px solid;margin-left:350px;  border-radius:6px;padding:10px; opacity:0.9; border-color:#000000;">*@
+    <div>
+
+
+        <form action="/Users/EditPhoto" enctype="multipart/form-data" method="post">
+            <fieldset>
+                <legend>Change Profile Picture </legend>
+                <br/>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.ProfilePicture)
+                </div>
+                    <input type="file" name="file" max="1" />
+
+                    <input type="text" name="u_id" hidden value=@user.UserID />
+
+                    <input type="submit" style="margin-left:6px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Profile Picture">
+            </fieldset>
+        </form>
+
+        <div style="height:300px">
+        @using (Html.BeginForm("Edit", "Users", FormMethod.Post))
+        {
+
+
+            <fieldset>
+                @*<input type="submit" style="margin-left:6px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Profile Picture">*@
+                <br />
+                <legend>Edit Details </legend>
+
+                @Html.HiddenFor(m => m.UserID)
+                <br />
+
+                <div class="editor-label">
+                     @Html.LabelFor(m => m.FirstName)
+                </div>
+
+                <div class="editor-field">
+                     @Html.EditorFor(m => m.FirstName)
+                 </div>
+
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.LastName)
+                 </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.LastName)
+                 </div>
+                    <br />
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Email)
+                    </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Email)
+                 </div>
+                    <br />
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Password)
+                    </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Password)
+                </div>
+                    <br />
+                    <br />
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.WorkPlace)
+                    </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.WorkPlace)
+                    </div>
+                    <br />
+
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.StudiedAt)
+                    </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.StudiedAt)
+                </div>
+                    <br />
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Country)
+                    </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Country)
+                </div>
+                    <br />
+                    <div class="editor-label">
+                        @Html.LabelFor(m => m.Mobile)
+                    </div>
+                <div class="editor-field">
+                    @Html.EditorFor(m => m.Mobile)
+                </div>
+                <br/>
+                <br/>
+
+                    @*<input type="submit" value="Save" />*@
+                <input type="submit" value="Save" style="margin-left:60px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Profile Picture">
+
+</fieldset>
+                }
+</div>
+    </div>
+</body>
+
+

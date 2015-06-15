@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a1fb3d34a94849edaa52c6efafbf9260" Name="Diagram1" ZoomLevel="110">
+        <EntityTypeShape EntityType="DataBaseModel.Admin" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DataBaseModel.Comment" Width="1.5" PointX="5.25" PointY="6.5" />
+        <EntityTypeShape EntityType="DataBaseModel.Contact" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DataBaseModel.Friend" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="DataBaseModel.Like" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="DataBaseModel.Post" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="DataBaseModel.User" Width="1.5" PointX="0.75" PointY="3" />
+        <AssociationConnector Association="DataBaseModel.FK_Comment_ToTable" />
+        <AssociationConnector Association="DataBaseModel.FK_Friend_ToTable" />
+        <AssociationConnector Association="DataBaseModel.FK_Like_ToTable" />
+        <AssociationConnector Association="DataBaseModel.FK_Post_ToTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

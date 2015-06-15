@@ -1,0 +1,135 @@
+﻿@using EAD_2.Models
+@{
+    User u = (User)HttpContext.Current.Session["user"];
+    Admin admin = (Admin)HttpContext.Current.Session["admin"];
+   
+ }
+
+<head>
+
+<link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+@*<link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />*@
+<script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+<link rel="shortcut icon" href="~/assets/img/favicon.png">
+<!-- Bootstrap -->
+<link href="~/assets/css/bootstrap.css" rel="stylesheet">
+@*<link href="assets/css/bootstrap-theme.css" rel="stylesheet">*@
+<!-- siimple style -->
+@*<link href="~/assets/css/style.css" rel="stylesheet">*@
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="~/Content/myslider/jssor/js/jquery-1.9.1.min.js"></script>
+<script src="~/Content/Login Popup/login-signup-modal-window/js/main.js"></script>
+<script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+<link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+@*<link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />*@
+
+
+    
+    <script src="~/assets/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home/Index"> <p style="font-family:Buxton Sketch; font-size:xx-large; font-weight: bolder ; margin-top:2px">Distrilycs-DTL </p></a>
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="~/Home/ContactUS">Contact Us</a></li> 
+                </ul>
+                <nev class="main-nav" style="margin-right: -2px; margin-top: 5px">
+                  <ul>
+                        @if (u == null && admin == null)
+                        {
+
+                           
+                            <li>
+                            <a class="cd-signin" href="/Users/SignIN" style=" border-radius:15px; margin-right:30px; margin-top:2px;">Sign in</a>
+                            </li>
+                        }
+                       
+                        @if (u != null && admin == null)
+                        {
+                            <li>
+                                <a href="/Users/User1" style=" margin-top:auto">
+                                    <img src="~/FFiles/@u.ProfilePicture" width="30" height="30" />
+                                    @u.FirstName @u.LastName
+                                </a>
+
+                                <a class="cd-signin" href="~/Users/Signout" style=" border-radius:15px; margin-top:2px;"> Sign out</a>
+                            </li>
+                        }
+                      
+                        @if(u==null && admin != null)
+                        {
+
+                            <li>
+                                <a href="#">
+                                   Admin  @admin.FirstName @admin.LastName
+                                </a>
+
+                                <a class="cd-signin" href="~/Admin/Signout" style=" border-radius:15px; margin-top:2px;">Sign out</a>
+                            </li>
+                        }
+
+                    </ul>            
+                </nev>
+
+
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    
+
+
+  
+    @RenderBody()
+
+
+    <div id="footer" style="margin-bottom:-10%; background-color:black">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <ul>
+                        <li>
+                            <p style="color:white"> @@CopyRight Reserved </p>
+                            
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-lg-6 col-lg-offset-11">
+                <ul>
+                    <li>
+                        <a href="www.facebool.com/Distrilycs_DTL">Like us on FB </a>
+                    </li>
+                </ul>
+
+               </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+

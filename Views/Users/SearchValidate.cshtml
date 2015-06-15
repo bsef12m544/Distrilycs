@@ -1,0 +1,24 @@
+﻿@using EAD_2.Models
+@{
+    Layout = null;
+}
+
+@model List<User>
+
+
+    <ul>
+        @foreach (User i in Model)
+        {
+        <li>
+
+            <a href="/Users/ShowProfile?UserID=@i.UserID">
+                <img src="~/FFiles/@i.ProfilePicture" width="30" height="30" />
+                @i.FirstName @i.LastName
+            </a>
+        </li>
+        }
+    </ul>
+
+
+
+

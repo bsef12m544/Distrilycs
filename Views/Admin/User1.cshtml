@@ -1,0 +1,225 @@
+﻿@model EAD_2.Models.Post
+@{
+    ViewBag.Title = "User1";
+    User user = (User)Session["user"];
+}
+}
+
+@using EAD_2.Models
+
+
+<head>
+
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+    <title>Admin View</title>
+    <!-- Bootstrap -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+    <!-- siimple style -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="~/Content/myslider/jssor/js/jquery-1.9.1.min.js"></script>
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/main.js"></script>
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+
+
+    <!---->
+    <script src="~/Content/TimeLine/buttons.js"></script>
+    <link href="~/Content/TimeLine/bootstrap_2.css" rel="stylesheet" />
+
+    <script src="~/Content/TimeLine/loader.js"></script>
+    <link href="~/Content/TimeLine/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/TimeLine/style_3.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="~/Content/TimeLine/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="~/Content/TimeLine/bootstrap.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.status').click(function() { $('.arrow').css("left", 0);});
+        $('.photos').click(function() { $('.arrow').css("left", 80);});
+        $('.videos').click(function() { $('.arrow').css("left", 160);});
+    });
+    </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "0d989ecb-3b82-4988-a090-d396a86e25a7", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+    <script>
+  var options={ "publisher": "0d989ecb-3b82-4988-a090-d396a86e25a7", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+    </script>
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+            <li class="col-md-10 col-md-offset-1">
+              
+                 <h2 class="text-center"> Welcome @user.FirstName</h2> 
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-time invert" title="Now" id=""></i></a></div>
+                        <div class="timeline-panel">
+                            <form action="~/Users/AddPhoto" method="post" role="form" enctype="multipart/form-data" class="facebook-share-box">
+                                <div class="timeline-body">
+                                    <div class="share-form">
+                                        <ul class="post-types">
+                                            <li class="post-type">
+                                                <a class="status" id="shareType" href="#"><i class="icon icon-file"></i> Status</a>
+                                            </li>
+                                            @*<li class="post-type">
+                                                <a class="photos" id="shareType" href="#"><i class="icon icon-camera"></i> Photos</a>
+                                            </li>
+                                            <li class="post-type">
+                                                <a class="videos" id="shareType" href="#"><i class="icon icon-film"></i> Video</a>
+                                            </li>*@
+                                        </ul>
+                                        <div class="share">
+                                            <div class="arrow"></div>
+                                            <div><textarea name="message" cols="40" rows="10" id="status_message" class="form-control message" style="height: 62px; overflow: hidden;" placeholder="What's on your mind ?"></textarea> </div>
+                                            @*      <div class="image hide">
+                                                        <input type="file" class="form-control" name="image" id="image">
+                                                    </div>
+                                                    <div class="video hide">
+                                                        <input type="text" class="form-control" placeholder="Youtube or Vimeo video URL" id="videoUrl" name="videoUrl">
+                                                    </div>
+                                                </div>
+                                            *@
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="file" name="file" max="1" />
+                                <div class="timeline-footer clearfix">
+                                    <div class="pull-right">
+                                        <input type="submit" name="submit" value="Post" id="btn-share" class="btn btn-primary">
+                                    </div>
+                                </div>
+
+                            </form>
+                            </div>
+                    </li>
+                      @*for (int i = 0; i < ViewBag.List.Length/2; i++)*@
+                    
+                  <li>
+                      <a href="~/Admin/Admin1">Back</a>
+                  </li>
+
+
+                  <li>
+                    @foreach(Post i in @ViewBag.List)
+                    {
+                     <form action="~/Admin/Delete/@i.Id">
+                            <div class="timeline-inverted">
+                                <div class="timeline-badge primary"><a title="11 hours ago via Twitter"><i class="glyphicon glyphicon-time invert" id=""></i></a></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-header">
+                                        <div>
+                                            <input type="submit" value="Delete Post" class="btn btn-default" name="pid">
+                                            <p><a href="/Users/ProfileInfo/@user.UserID"> @user.FirstName @user.LastName</a> added a new Post </p>
+                                            <p>@i.Status</p>
+                                            <br> <img class="img-responsive img-rounded" src="@Url.Content("~/FFiles/"+ i.File_Id)" style="width:600px; height:400px">
+                                            
+                                           
+                                        </div>
+                                       
+                                    </div>
+                                  
+                                </div>
+                            </div>
+
+                     
+
+                        </form>
+                    }
+                   </li>
+                    @*   <li>
+                            <div class="timeline-badge primary"><a title="11 hours ago via Twitter"><i class="glyphicon glyphicon-time invert" id=""></i></a></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-header">
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <img class="img-responsive img-rounded" src="">
+                                        </div>
+                                        <div class="col-xs-8">
+                                            <a>@ViewBag.Name </a> shared 6 hours ago
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline-heading">
+                                    <div class="videowrapper">
+                                        <iframe height="300" src="http://www.youtube.com/embed/IuLG6WqjOEo" frameborder="0" allowfullscreen=""></iframe>
+                                    </div>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+
+                                </div>
+
+                                <div class="timeline-footer">
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object" src="http://0.gravatar.com/avatar/43a5669f2e4d2342701ed560d453a0dd?s=50&d=&r=G" />
+                                        </a>
+                                        <div class="media-body">
+                                            <p>Looking cool</p>
+                                            <a href="#">January 19 at 8:15pm</a>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object" src="http://0.gravatar.com/avatar/43a5669f2e4d2342701ed560d453a0dd?s=50&d=&r=G" />
+                                        </a>
+                                        <div class="media-body">Looking cool </div>
+                                    </div>
+                                    <hr>
+                                    <div class="media">
+                                        <a class="pull-left" href="#">
+                                            <img class="media-object" src="http://0.gravatar.com/avatar/43a5669f2e4d2342701ed560d453a0dd?s=50&d=&r=G" />
+                                        </a>
+                                        <div class="media-body">Looking cool </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    *@
+
+                </ul>
+                </li>
+            </div>
+        </div>
+    </div>
+    <script src="http://wsnippets.com/secure_download.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45065332-1', 'wsnippets.com');
+        ga('send', 'pageview');
+
+
+    </script>
+</body>
+</html>

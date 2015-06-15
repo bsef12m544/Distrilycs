@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "ShowProfile";
+    User u1 = (User)Session["u1"];
+    User user = (User)Session["user"];
+}
+
+<h2>ShowProfile</h2>
+
+@model EAD_2.Models.User
+@using EAD_2.Models
+
+
+<head>
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+
+    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+    <title>Distrilycs-DTL</title>
+    <!-- Bootstrap -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+    @*<link href="assets/css/bootstrap-theme.css" rel="stylesheet">*@
+    <!-- siimple style -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body style="background:url('../../Images/1920x1080.jpg') center no-repeat">
+    @*style="background:url('../../Images/SignUp.jpg') center no-repeat ">*@
+
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/main.js"></script>
+
+
+
+    <div id="header">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="pull-left" style="border:2px solid;margin-left:350px;  border-radius:6px;padding:10px;opacity:0.7; background-color:#000000; border-color:#000000;">
+                    <p style="color:white; font-size:45px; font-weight: bolder "> Profile Info </p>
+                    <form method="post" action="~/Users/EditPhoto/@u1.UserID">
+                        <table style="width:450px">
+                            <tr>
+                                <td>
+                                    <br> <img class="img-responsive img-rounded" src="@Url.Content("~/FFIles/"+ u1.ProfilePicture)" style="width:600px; height:400px">
+                                    @*<input type="submit" style="margin-left:6px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Profile Picture">*@
+
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                    @*<form name="htmlform" method="post" action="~/Users/EditItem/@user.UserID">*@
+                        <table style="width:450px">
+                            <tr />
+                            <tr>
+
+
+                                <td>
+                                    <label for="first_name" style="color:white">First Name :</label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="first_name" maxlength="50" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.FirstName </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td valign="top">
+                                    <label for=" last_name" style="color:white">Last Name </label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="last_name" maxlength="50" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.LastName </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    <label for="email" style="color:white">Email Address </label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="email" maxlength="80" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.Email</label>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    <label for="telephone" style="color:white">WorkPlace</label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="telephone" maxlength="30" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.WorkPlace</label>
+                                </td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td valign="top">
+                                    <label for="telephone" style="color:white">Studied AT</label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="telephone" maxlength="30" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.StudiedAt</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    <label for="telephone" style="color:white">Country</label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="telephone" maxlength="30" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.Country</label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td valign="top">
+                                    <label for="telephone" style="color:white">Mobile No</label>
+                                </td>
+                                <td valign="top">
+                                    @*<input type="text" style="border:1px solid;border-radius:6px; border-color:#ff6a00;" name="telephone" maxlength="30" size="30">*@
+                                    <label for="first_name" style="color:white">@u1.Mobile</label>
+                                </td>
+                            </tr>
+
+
+                          <tr>
+                            <td>
+
+                                 <a href="/Users/AddTo?UserID=@u1.UserID" @*style="color:whitesmoke"*@>Click to Add him in Your Friends Circle</a> <br/>
+                                <a href="/Users/User1">Back To TimeLine </a>
+                                @*<td colspan="2" style="text-align:center">
+                                    <input type="submit" style="margin-left:6px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="EDIT">
+                                </td>*@
+                            </td>
+                         </tr>
+                        </table>
+                    @*</form>*@
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+

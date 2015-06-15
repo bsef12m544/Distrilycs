@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "Index";
+    
+}
+
+@*<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet">
+    <script src="~/Scripts/bootstrap.js"></script>
+</head>
+<body>
+    <div>
+    <div>
+        <h3 style="margin-left:200px; font-weight:500; margin-top:60px">Sign In For Admin </h3>
+        <hr style="margin-left:200px; width:900px" />
+    </div>
+
+    <div style="height:150mm">
+        <form action="../Admin/Validate" class="form-horizontal" role="form" method="post">
+
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="email">Email:</label>
+                <div class="col-lg-3">
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-lg-3" for="pwd">Password:</label>
+                <div class="col-lg-3">
+                    <input type="password" class="form-control" name="password" placeholder="Enter Password" />
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-lg-offset-3 col-lg-10">
+
+                        <br><br><input type="submit" value="Submit" class="btn btn-default" />
+                        <br> <br> 
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+        </div>
+</body>
+</html>*@
+
+<html lang="en">
+<head>
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+
+    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+    <title>Admin Sign IN</title>
+    <!-- Bootstrap -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+    @*<link href="assets/css/bootstrap-theme.css" rel="stylesheet">*@
+    <!-- siimple style -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body style="background-color:white">
+
+
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/main.js"></script>
+
+    <div id="header">
+
+        <div class="container">
+            <div class="row">
+                <div style="height:175mm">
+                    <div class="pull-left" style="border:2px solid;margin-left:350px;  border-radius:6px;padding:10px;opacity:0.7; background-color:#000000; border-color:#000000;">
+                        <p style="color:white; font-size:45px; font-weight: bolder "> Sign In For Admin</p>
+                        <form action="../Admin/Validate" class="form-horizontal" role="form" method="post">
+                            <table style="width:450px" height="150">
+
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-3" for="email">Email:</label>
+                                            <div class="col-lg-7">
+                                                <input type="email" class="form-control" name="email" placeholder="Enter Email"/>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-3" for="pwd">Password:</label>
+                                            <div class="col-lg-7">
+                                                <input type="password" class="form-control" name="password" placeholder="Enter Password" />
+                                            </div>
+                                        </div>
+
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td colspan="2" style="text-align:center">
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-3 col-lg-10">
+
+                                                <br><br><input type="submit" value="Submit" class="btn btn-default" />
+                                                <br> <br>
+                                            </div>
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+                        </form>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>
+
+
+
+
+

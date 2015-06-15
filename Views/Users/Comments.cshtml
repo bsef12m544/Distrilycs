@@ -1,0 +1,182 @@
+﻿@using EAD_2.Models
+@{
+    ViewBag.Title = "Comments";
+    User user = (User)Session["user"];
+    Post p = (Post)Session["p"];
+    Like l = new Like();
+    
+}
+
+
+<head>
+
+ 
+
+    
+    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+    <title>Comments </title>
+    <!-- Bootstrap -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+    <!-- siimple style -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="~/Content/myslider/jssor/js/jquery-1.9.1.min.js"></script>
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/main.js"></script>
+    <script src="~/Content/Login Popup/login-signup-modal-window/js/modernizr.js"></script>
+
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/Login Popup/login-signup-modal-window/css/style.css" rel="stylesheet" />
+
+
+    <!---->
+    <script src="~/Content/TimeLine/buttons.js"></script>
+    <link href="~/Content/TimeLine/bootstrap_2.css" rel="stylesheet" />
+
+    <script src="~/Content/TimeLine/loader.js"></script>
+    <link href="~/Content/TimeLine/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/TimeLine/style_3.css" rel="stylesheet" />
+
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="~/Content/TimeLine/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="~/Content/TimeLine/bootstrap.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('.status').click(function() { $('.arrow').css("left", 0);});
+        $('.photos').click(function() { $('.arrow').css("left", 80);});
+        $('.videos').click(function() { $('.arrow').css("left", 160);});
+    });
+    </script>
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "0d989ecb-3b82-4988-a090-d396a86e25a7", doNotHash: false, doNotCopy: false, hashAddressBar: true});</script>
+    <script>
+  var options={ "publisher": "0d989ecb-3b82-4988-a090-d396a86e25a7", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+    </script>
+
+
+    @*$('.left.demo.sidebar')
+        .sidebar('toggle')
+        ;
+        *@
+
+</head>
+
+
+
+<body style="background-color:white">
+    <div class="col-md-5 col-md-offset-3" style="background-color:white">
+        <ul class="timeline" >
+            <li class="timeline-inverted">
+                <div class="timeline-badge primary"><a title="11 hours ago via Twitter"><i class="glyphicon glyphicon-time invert" id=""></i></a></div>
+                @*<div class="timeline-panel">*@
+                <div class="timeline-header" style="background-color:white">
+                    <div>
+                        @*<p><a href="/Users/ProfileInfo/@user.UserID"> @user.FirstName @user.LastName</a> added a new Post </p>*@
+                        <p><a @*href="/Users/ProfileInfo/@user.UserID"*@> @ViewBag.Post.FirstName @ViewBag.Post.LastName</a> added a new Post </p>
+                        <p>@ViewBag.Post.Status</p><br />
+                        <p class="pull-right">@ViewBag.Post.Post_Date</p>
+                        <br> <img class="img-responsive img-rounded" src="@Url.Content("~/FFiles/"+ @ViewBag.Post.File_Id)" style="width:600px; height:400px">
+                    </div>
+
+                    <div class="media">
+
+                        <a href="~/Users/Liked?PostID=@p.Id">- Like </a>     
+
+
+                        @for (int i = 0; i < ViewBag.com.Count; i++)
+                        {
+                            @*<p style="font-family:'Arial Rounded MT'">
+                                <strong> @ViewBag.com[i].CommentName </strong> </p>*@
+                            
+                            <div class="row">
+                                <div class="col-md-10 col-sm-10">
+                                    <div class="panel panel-default arrow left">
+                                        <div class="panel-body" @*style="border-color:black"*@>
+                                            <header class="text-left">
+                                                <div class="comment-user"><i class="fa fa-user"></i><strong> @ViewBag.com[i].CommentName </strong>  said  </div>
+                                               
+                                            </header>
+                                            @*border-color:black;*@
+                                            <div class="comment-post" style=" border-radius:0.7px">
+                                                <p>
+                                                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; " @ViewBag.com[i].Comment1 " 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             </div>
+
+                                @*<div class="comment-post">
+                                            <p>
+                                                 @ViewBag.com[i].Comment1
+                                            </p>
+                                       <br />
+                                    </div>*@
+                    }
+
+
+
+    </div>
+
+                    <form method="post" action="/Users/AddComment">
+                        <input name="Comment1" type="text" width="100">
+                        <input type="submit" value="Post Comment">
+                    </form>
+                    @*<a href="/Users/AddComment?Comment1=Comment1" style="margin-left:3px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Add Comment"> Post Comment </a>*@
+                    <br/><br/>
+                    <a href="/Users/User1" style="margin-left:3px;  border:2px solid;border-radius:6px;background-color:white; font-weight:bold; border-radius:5px; border-color:#000000;" value="Add Comment"> Back To TimeLine </a>
+
+
+                    @*<input type="submit" style="margin-left:3px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Add Comment">*@
+
+
+                    @*foreach (Comment c in ViewBag.com)
+            {
+                <p style="font-family:'Arial Rounded MT'">
+                    <strong> @c.CommentName </strong>
+                    @c.Comment1
+                </p><br />
+
+                @*<p style="margin-left:4px">@c.CommentDate_Time </p>*@
+
+
+
+
+                    @*<a href="/Users/Comments?id=@ViewBag.Post.Id"> Comments </a>*@
+
+
+                    @*@Html.HiddenFor(x=>x.CommentName)
+            @Html.HiddenFor(x=>x.PostID)
+            @Html.HiddenFor(x =>x.CommentDate_Time)*@
+                    @*<div class="form-group">
+                <form action="/Users/AddComment" method="post">
+                    <input hidden="hidden" name="PostID" value="@ViewBag.Post.PostID" />
+                    <input hidden="hidden" name="CommentName" value="@user.FirstName @user.LastName" />
+                    <input hidden="hidden" name="CommentDate_Time" value="@DateTime.Now" />
+
+                    <input name="Comment1" type="text" width="100">
+                    <input type="submit" style="margin-left:3px;  border:2px solid;border-radius:6px;background-color:white;color:orange; font-weight:bold; border-radius:5px; border-color:#ff6a00;" value="Add Comment">
+
+                </form>
+            </div>*@
+                    @*<form>
+                <input name="submit" type="Back To Timeline" />
+            </form>*@
+
+                </div>
+
+               
+            </li>
+        
+        </ul>
+    </div>
+  
+
+
+</body>

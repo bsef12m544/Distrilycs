@@ -1,0 +1,64 @@
+﻿@model EAD_2.Models.User
+@using EAD_2.Models
+
+
+@{
+    ViewBag.Title = "Admin1";
+}
+
+<h2>Admin1</h2>
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditItem</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+    </style>
+
+</head>
+       
+  
+ <body>
+     <br/><br /><br />
+     <h1 style="font-weight:100;"> List of Users </h1>  
+     <br /><br /><br />
+     <div style="height:200mm">
+         <table style="width:100%">
+             <tr>
+                 <th>UserID</th>
+                 <th>Firstname</th>
+                 <th>LastName</th>
+                 <th>Email</th>
+                 <th>Password</th>
+                 <th>Country</th>
+                 <th></th>
+                 <th></th>
+             </tr>
+
+             @foreach (User u in ViewBag.list)
+             {
+                 <tr>
+                     <td>@u.UserID</td>
+                     <td>@u.FirstName</td>
+                     <td>@u.LastName</td>
+                     <td>@u.Email</td>
+                     <td>@u.Password</td>
+                     <td>@u.Country</td>
+                     <td><a href="~/Admin/ShowID?Id=@u.UserID">EDIT</a></td>
+                     <td><a href="~/Admin/DeleteUser?Id=@u.UserID">DELETE</a></td>
+                 </tr>
+             }
+
+         </table>
+     </div>
+</body>
+
